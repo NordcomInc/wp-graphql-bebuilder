@@ -1,0 +1,44 @@
+name: build and release
+
+on:
+    release:
+        types: [published]
+
+jobs:
+    tag:
+        name: 🚛 Build and release
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: 🕶️ Checkout repository
+              uses: actions/checkout@v3
+
+            - name: 🤮 Setup PHP
+              uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8
+                  coverage: none
+                  extensions: mbstring, intl
+                  tools: composer:v2
+
+            - name: 📦 Download dependencies
+              run: |
+                  composer install --no-dev --optimize-autoloader
+
+            - name: 🗃️ Create artifact
+              run: |
+                  mkdir plugin-build
+                  composer archive -vvv --format=zip --file="plugin-build/wp-graphql-bebuilder"
+
+            - name: 🚛 Upload artifact
+              uses: actions/upload-artifact@v3
+              with:
+                  name: wp-graphql-bebuilder
+                  path: plugin-build/wp-graphql-bebuilder.zip
+
+            - name: 🚀 Upload release asset
+              uses: softprops/action-gh-release@v1
+              with:
+                  files: plugin-build/wp-graphql-bebuilder.zip
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

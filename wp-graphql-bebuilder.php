@@ -23,7 +23,7 @@
  * Requires Plugins:            wp-graphql
  * WPGraphQL requires at least: 1.12.0
  * License:                     MIT
- * License URI:                 https://github.com/NordcomInc/wordpress-headless-theme/blob/main/LICENSE
+ * License URI:                 https://github.com/NordcomInc/wp-graphql-bebuilder/blob/main/LICENSE
  */
 
 namespace WPGraphQL\Extensions;

@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "johnbillion.vscode-wordpress-hooks",
+        "valeryanm.vscode-phpsab",
+        "bierner.github-markdown-preview",
+        "esbenp.prettier-vscode",
+        "zobo.php-intellisense"
+    ]
+}

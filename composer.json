@@ -1,0 +1,32 @@
+{
+    "name": "nordcom/wp-graphql-bebuilder",
+    "description": "WordPress plugin to expose BeBuilder page objects through WPGraphQL",
+    "type": "wordpress-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nordcom Group Inc.",
+            "email": "opensource@nordcom.io"
+        },
+        {
+            "name": "Filiph Siitam Sandström",
+            "email": "filiph@nordcom.io"
+        }
+    ],
+    "suggest": {
+        "wp-graphql/wp-graphql": "Required to return data via GraphQl"
+    },
+    "require-dev": {
+        "automattic/vipwpcs": "^2.3",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "squizlabs/php_codesniffer": "^3.7"
+    },
+    "require": {
+        "phpcompatibility/phpcompatibility-wp": "^2.1"
+    },
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}

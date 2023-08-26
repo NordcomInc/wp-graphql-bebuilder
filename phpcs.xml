@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="Coding Standards" xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd">
+    <file>.</file>
+    <exclude-pattern>*/.git/*</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
+    <exclude-pattern>*/wp-content/*</exclude-pattern>
+
+    <arg value="sp"/>
+    <arg name="basepath" value="."/>
+    <arg name="colors"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="20"/>
+
+    <rule ref="WordPressVIPMinimum">
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+        <exclude name="WordPress.PHP.DisallowShortTernary.Found"/>
+    </rule>
+
+    <rule ref="PHPCompatibilityWP">
+        <config name="testVersion" value="7.0-"/>
+    </rule>
+</ruleset>

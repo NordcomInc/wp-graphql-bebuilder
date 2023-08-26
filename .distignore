@@ -1,0 +1,8 @@
+.git/
+.github/
+.vscode/
+node_modules/
+vendor/
+.prettierrc
+.distignore
+.gitignore

@@ -1,21 +1,13 @@
 <?php
 /**
- * WP GraphQL BeBuilder
- * 
- * @package @nordcom/wp-graphql-bebuilder
- * @author Nordcom Group Inc.
- * @license MIT
- * @version 0.1.0
- * 
- * @wordpress-plugin
- * Plugin Name:                 WP GraphQL BeBuilder
+ * Plugin Name:                 WPGraphQL BeBuilder
  * Plugin URI:                  https://github.com/NordcomInc/wp-graphql-bebuilder/
- * GitHub Plugin URI:           https://github.com/NordcomInc/wp-graphql-bebuilder/
- * Description:                 A WordPress plugin to expose BeBuilder page objects through WPGraphQL.
+ * GitHub Plugin URI:           https://github.com/NordcomInc/wp-graphql-bebuilder
+ * Description:                 Expose BeBuilder page objects through WPGraphQL.
  * Version:                     0.1.0
  * Author:                      Nordcom Group Inc.
  * Author URI:                  https://nordcom.io/
- * Tags:                        Headless WordPress, BeBuilder, WPGraphQL, GraphQL, Betheme
+ * Tags:                        Headless, BeBuilder, WPGraphQL, GraphQL, Betheme
  * Text Domain:                 wp-graphql-bebuilder
  * Domain Path:                 /languages
  * Tested up to:                6.3
@@ -44,7 +36,7 @@ add_action('admin_init', function () {
             <div class="notice notice-error">
                 <p>
                     <?php esc_html_e(
-                        'The WP GraphQL BeBuilder plugin can\'t be properly activated because the following dependencies are unavailable or not installed:',
+                        'The WPGraphQL BeBuilder plugin couldn\'t be properly activated because the following dependencies are unavailable or not installed:',
                         'wp-graphql-bebuilder'
                     ); ?>
                 </p>
@@ -64,6 +56,7 @@ add_action('admin_init', function () {
         return;
     }
 });
+
 add_action('graphql_init', function() {
     add_action('graphql_register_types', function() {
         register_graphql_field('Page', 'mfnItems', [
@@ -71,7 +64,7 @@ add_action('graphql_init', function() {
             'description' => __('Page Components', 'wp-graphql-bebuilder'),
             'resolve' => function($post) {
                 $items = get_post_meta($post->ID, 'mfn-page-items', true);
-                return ! empty($items) ? json_encode(unserialize(base64_decode($items))) : '';
+                return ! empty($items) ? wp_json_encode(unserialize(base64_decode($items))) : '';
             }
         ]);
     

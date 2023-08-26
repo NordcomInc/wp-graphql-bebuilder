@@ -1,0 +1,32 @@
+{
+    "name": "@nordcom/wp-graphql-bebuilder",
+    "description": "WordPress plugin to expose BeBuilder page objects through WPGraphQL",
+    "version": "0.1.0",
+    "prettier": "@nordcom/prettier",
+    "scripts": {},
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/NordcomInc/wp-graphql-bebuilder.git"
+    },
+    "author": {
+        "name": "Nordcom Group Inc.",
+        "email": "opensource@nordcom.io",
+        "url": "https://nordcom.io/"
+    },
+    "contributors": [
+        {
+            "name": "Filiph Siitam Sandström",
+            "email": "filiph@nordcom.io",
+            "url": "https://github.com/filiphsps/"
+        }
+    ],
+    "bugs": {
+        "url": "https://github.com/NordcomInc/wp-graphql-bebuilder/issues/"
+    },
+    "homepage": "https://github.com/NordcomInc/wp-graphql-bebuilder/",
+    "dependencies": {},
+    "devDependencies": {
+        "@nordcom/prettier": "0.1.1",
+        "prettier": "3.0.2"
+    }
+}

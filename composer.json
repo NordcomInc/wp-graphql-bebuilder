@@ -17,7 +17,7 @@
         "wp-graphql/wp-graphql": "Required to return data via GraphQl"
     },
     "require-dev": {
-        "automattic/vipwpcs": "^2.3",
+        "automattic/vipwpcs": "^3.0",
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
         "squizlabs/php_codesniffer": "^3.7"
     },

@@ -27,6 +27,6 @@
     "dependencies": {},
     "devDependencies": {
         "@nordcom/prettier": "0.1.1",
-        "prettier": "3.4.0"
+        "prettier": "3.4.2"
     }
 }
